@@ -5,13 +5,13 @@ import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(current_dir, 'Website_images', 'AIvsHuman.jpg')
 
-stl.set_page_config(page_title = "M.U.R.A.L",
+stl.set_page_config(page_title = "M.U.R.A.L 2.0",
                     page_icon=':tada:',
                     layout="wide",
                     initial_sidebar_state="expanded",
                     )
 
-stl.title("M.U.R.A.L")
+stl.title("M.U.R.A.L-2.0")
 stl.subheader("Machine-aided Understanding and Recognition of Artistic Legacies")
 stl.markdown("---")
 
