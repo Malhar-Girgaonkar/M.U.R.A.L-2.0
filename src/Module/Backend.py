@@ -6,27 +6,36 @@ import numpy as np
 from PIL import Image
 
 def Load_trained_model():
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    model_path = os.path.join(current_dir, '..', 'Models', 'AI_vs_Human_model.h5')
-    model_computed = load_model(model_path)
-    return(model_computed)
+    try:
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        model_path = os.path.join(current_dir, '..', 'Models', 'AI_vs_Human_model.h5')
+        model_computed = load_model(model_path)
+        print(f"Model loaded successfully from {model_path}")
+        return model_computed
+    except Exception as e:
+        print(f"Error loading model: {e}")
+        return None
 
 def preprocess(image_path):
-    img_height , img_width = 256 , 256
-    #for image in os.listdir(test_dir):
-    #    image_path = os.path.join(test_dir,image)
-    image_path = image_path
-    #print(image_path)
-    image_loaded = image.load_img(image_path , target_size = (img_height , img_width))
-    image_array = image.img_to_array(image_loaded)
-    img_array = np.expand_dims(image_array, axis=0)
-    img_array /= 255.0
-    return(img_array)
+    try:
+        img_height, img_width = 256, 256
+        image_loaded = image.load_img(image_path, target_size=(img_height, img_width))
+        image_array = image.img_to_array(image_loaded)
+        img_array = np.expand_dims(image_array, axis=0)
+        img_array /= 255.0
+        return img_array
+    except Exception as e:
+        print(f"Error preprocessing image: {e}")
+        return None
 
 def Predictions(img_path):
     model_computed = Load_trained_model()
+    if model_computed is None:
+        return "Model loading error"
     #preprocess data
     img_array = preprocess(img_path)
+    if img_array is None:
+        return "Image preprocessing error"
     #predict with model_computed
     try:
         prediction = model_computed.predict(img_array)
