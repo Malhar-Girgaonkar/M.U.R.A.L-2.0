@@ -18,7 +18,7 @@ stl.markdown("---")
 # Sidebar / Left section for instructions
 stl.sidebar.title('How to Use')
 stl.sidebar.markdown('<hr>', unsafe_allow_html=True)
-stl.sidebar.markdown('# Welcome to M.U.R.A.L!')
+stl.sidebar.markdown('# Welcome to M.U.R.A.L-2.0!')
 stl.sidebar.markdown('## Follow these steps:')
 stl.sidebar.markdown('- Step 1: Read the summary')
 stl.sidebar.markdown('- Step 2: Go to try M.U.R.A.L')
