@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "new-project"
+version = "0.1.0"
+description = "This is my first streamlit project and i will be creating a simple gui for my human vs ai art classifier"
+authors = ["Malhar-Girgaonkar <malhargirgaonkar@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "3.10.11"
+streamlit = "^1.36.0"
+flask = "^3.0.3"
+numpy = "1.26.4"
+protobuf = "4.25.3"
+tensorflow-io-gcs-filesystem = "0.31.0"
+tensorflow = "2.16.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
