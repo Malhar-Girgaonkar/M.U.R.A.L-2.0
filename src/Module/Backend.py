@@ -28,7 +28,11 @@ def Predictions(img_path):
     #preprocess data
     img_array = preprocess(img_path)
     #predict with model_computed
-    prediction = model_computed.predict(img_array)
+    try:
+        prediction = model_computed.predict(img_array)
+    except Exception as e:
+        print(f"Error during prediction: {e}")
+        return "Prediction error"
     #set threshold
     threshold = 0.5
     #print(prediction)
