@@ -6,7 +6,8 @@ import numpy as np
 from PIL import Image
 
 def Load_trained_model():
-    model_path = "Models\AI_vs_Human_model.h5"
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(current_dir, '..', 'Models', 'AI_vs_Human_model.h5')
     model_computed = load_model(model_path)
     return(model_computed)
 
