@@ -3,7 +3,7 @@ from Module import Backend as bknd
 import os
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
-image_path = os.path.join(current_dir, 'Website_images', 'AIvsHuman.jpg')
+image_path = os.path.join(current_dir, 'Website_images', 'AIvsHuman.png')
 
 stl.set_page_config(page_title = "M.U.R.A.L 2.0",
                     page_icon=':tada:',

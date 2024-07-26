@@ -18,7 +18,7 @@ def Load_trained_model():
 
 def preprocess(image_path):
     try:
-        img_height, img_width = 256, 256
+        img_height, img_width = 224, 224
         image_loaded = image.load_img(image_path, target_size=(img_height, img_width))
         image_array = image.img_to_array(image_loaded)
         img_array = np.expand_dims(image_array, axis=0)
@@ -43,12 +43,12 @@ def Predictions(img_path):
         print(f"Error during prediction: {e}")
         return "Prediction error"
     #set threshold
-    threshold = 0.5
+    threshold = 0.7
     #print(prediction)
     if prediction[0][0] > threshold:
-        return("AI Generated art")
+        return("Ai made art")
     else:
-        return("Human generated art")
+        return("Human made art")
 
 def Get_image_info(image_path):
     #open image as img
