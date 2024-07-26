@@ -43,7 +43,7 @@ def Predictions(img_path):
         print(f"Error during prediction: {e}")
         return "Prediction error"
     #set threshold
-    threshold = 0.7
+    threshold = 0.5
     #print(prediction)
     if prediction[0][0] > threshold:
         return("Ai made art")
